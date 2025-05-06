@@ -1,4 +1,5 @@
-export type Currency = {
-    code: string;
-    name: string;
-}
+import { currencySchema, CryptoCurrencySchema } from "../schemas/criptoSchema";
+import { z } from "zod";
+
+export type Currency = z.infer<typeof currencySchema>;
+export type CryptoCurrency = z.infer<typeof CryptoCurrencySchema>
