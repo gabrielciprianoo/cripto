@@ -1,38 +1,21 @@
-// CriptoSearchForm.tsx
-import React, { useState } from 'react';
+
 import { currencies } from '../data';
 
-type CryptoType = 'Bitcoin' | 'Ethereum' | 'Litecoin'; // Puedes agregar más tipos según lo necesites
-
 export default function CriptoSearchForm() {
-  const [selectedCurrency, setSelectedCurrency] = useState<string>('USD');
-  const [selectedCryptoType, setSelectedCryptoType] = useState<CryptoType>('Bitcoin');
-  const [error, setError] = useState<string>('');
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-   
-    setError('');
-    // Lógica de búsqueda de criptomonedas aquí
-    
-    console.log('Moneda seleccionada: ', selectedCurrency);
-    console.log('Tipo de criptomoneda: ', selectedCryptoType);
-  };
 
   return (
-    <div className="crypto-form-container container">
+    <>
       <h2>Buscar Criptomoneda</h2>
-      <form onSubmit={handleSubmit} className="crypto-search-form">
+      <form  className="crypto-search-form">
         <div className="select-container">
           <label htmlFor="currency" className="select-label">
             Seleccione la moneda:
           </label>
           <select
             id="currency"
-            value={selectedCurrency}
-            onChange={(e) => setSelectedCurrency(e.target.value)}
             className="crypto-select"
           >
+            <option value="">-- Seleccione una moneda --</option>
             {currencies.map((currency) => (
               <option key={currency.code} value={currency.code}>
                 {currency.name}
@@ -47,10 +30,9 @@ export default function CriptoSearchForm() {
           </label>
           <select
             id="cryptoType"
-            value={selectedCryptoType}
-            onChange={(e) => setSelectedCryptoType(e.target.value as CryptoType)}
             className="crypto-select"
           >
+            <option value="">-- Seleccione el tipo de cryptomoneda --</option>
             <option value="Bitcoin">Bitcoin</option>
             <option value="Ethereum">Ethereum</option>
             <option value="Litecoin">Litecoin</option>
@@ -62,7 +44,8 @@ export default function CriptoSearchForm() {
           Buscar
         </button>
       </form>
-      {error && <p className="error-message">{error}</p>}
-    </div>
+      
+    </>
   );
+
 }
