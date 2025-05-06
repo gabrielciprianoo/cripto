@@ -56,14 +56,13 @@ body{
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  width: 40rem;
-  margin: 0 auto;
+  width: auto;
+  
+  
 }
 
 h2 {
-  font-family: 'Arial', sans-serif;
-  font-size: 1.5rem;
+  font-size: 2.5rem;
   color: #333;
   margin-bottom: 20px;
 }
@@ -81,8 +80,8 @@ h2 {
 }
 
 .select-label {
-  font-size: 1rem;
-  margin-bottom: 5px;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
 }
 
 .crypto-select {
@@ -90,7 +89,7 @@ h2 {
   padding: 10px;
   border-radius: 5px;
   border: 2px solid #ddd;
-  font-size: 1rem;
+  font-size: 1.5rem;
   outline: none;
   transition: border-color 0.3s ease;
 }
@@ -99,18 +98,8 @@ h2 {
   border-color: #007bff;
 }
 
-.crypto-input {
-  padding: 10px;
-  border-radius: 5px;
-  border: 2px solid #ddd;
-  font-size: 1rem;
-  outline: none;
-  transition: border-color 0.3s ease;
-  margin-bottom: 15px;
-}
-
-.crypto-input:focus {
-  border-color: #007bff;
+.crypto-select:hover{
+  cursor: pointer;
 }
 
 .crypto-submit {
@@ -130,6 +119,6 @@ h2 {
 
 .error-message {
   color: red;
-  font-size: 0.875rem;
+  font-size: 1rem;
   margin-top: 10px;
 }
