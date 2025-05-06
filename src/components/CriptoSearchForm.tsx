@@ -5,26 +5,22 @@ import { currencies } from '../data';
 type CryptoType = 'Bitcoin' | 'Ethereum' | 'Litecoin'; // Puedes agregar más tipos según lo necesites
 
 export default function CriptoSearchForm() {
-  const [searchQuery, setSearchQuery] = useState<string>('');
   const [selectedCurrency, setSelectedCurrency] = useState<string>('USD');
   const [selectedCryptoType, setSelectedCryptoType] = useState<CryptoType>('Bitcoin');
   const [error, setError] = useState<string>('');
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!searchQuery.trim()) {
-      setError('Por favor, ingrese una criptomoneda para buscar.');
-      return;
-    }
+   
     setError('');
     // Lógica de búsqueda de criptomonedas aquí
-    console.log('Buscando criptomoneda: ', searchQuery);
+    
     console.log('Moneda seleccionada: ', selectedCurrency);
     console.log('Tipo de criptomoneda: ', selectedCryptoType);
   };
 
   return (
-    <div className="crypto-form-container">
+    <div className="crypto-form-container container">
       <h2>Buscar Criptomoneda</h2>
       <form onSubmit={handleSubmit} className="crypto-search-form">
         <div className="select-container">
@@ -61,14 +57,7 @@ export default function CriptoSearchForm() {
           </select>
         </div>
 
-        <input
-          type="text"
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-          className="crypto-input"
-          placeholder="Ej. Bitcoin, Ethereum"
-          aria-label="Ingrese el nombre de la criptomoneda"
-        />
+        
         <button type="submit" className="crypto-submit">
           Buscar
         </button>
