@@ -1,4 +1,5 @@
-import type { Currency } from "../types"
+import type { Currency } from "../types";
+
 
 export const currencies : Currency[] = [
   { code: 'USD', name: 'Dolar de Estados Unidos'},
