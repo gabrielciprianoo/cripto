@@ -1,8 +1,10 @@
 
 import { currencies } from '../data';
+import { useCriptostore } from '../store';
 
 export default function CriptoSearchForm() {
 
+  const { CryptoCurrencies } = useCriptostore();
   return (
     <>
       <h2>Buscar Criptomoneda</h2>
@@ -33,9 +35,10 @@ export default function CriptoSearchForm() {
             className="crypto-select"
           >
             <option value="">-- Seleccione el tipo de cryptomoneda --</option>
-            <option value="Bitcoin">Bitcoin</option>
-            <option value="Ethereum">Ethereum</option>
-            <option value="Litecoin">Litecoin</option>
+            {CryptoCurrencies.map(cryptoCurrency => {
+              const { CoinInfo: { Internal, FullName } } = cryptoCurrency;
+              return <option key={FullName} value={Internal}>{FullName}</option>;
+            })}
           </select>
         </div>
 
