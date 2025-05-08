@@ -128,7 +128,7 @@ h2 {
   padding: 2rem;
   margin: 3rem auto 0 auto;
   font-family: 'Segoe UI', sans-serif;
-  max-width: 50rem;
+  width: 80%;
 }
 
 .crypto-header {
@@ -197,7 +197,7 @@ h2 {
 }
 
 .spinner > div {
-  background-color: #333;
+  background-color: #2563eb;
   height: 100%;
   width: 6px;
   display: inline-block;

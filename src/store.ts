@@ -8,12 +8,21 @@ type CryptoStore = {
   convertedCurrency: ConvertedCurrency;
   fetchCryptos: () => Promise<void>;
   fetchData: ( pair : Pair) => Promise<void>;
+  loading: boolean;
 };
 
 export const useCriptostore = create<CryptoStore>()(
   devtools((set) => ({
     CryptoCurrencies: [] as CryptoCurrency[],
-    convertedCurrency: {} as ConvertedCurrency,
+    convertedCurrency: {
+      PRICE: '',
+          HIGHDAY: '',
+          LOWDAY: '',
+          IMAGEURL: '',
+          CONVERSIONLASTUPDATE: '',
+          CHANGEPCTDAY: '',
+    },
+    loaading: false,
 
     fetchCryptos: async () => {
       const cryptoCurrencies = await getCryptos();
@@ -24,10 +33,17 @@ export const useCriptostore = create<CryptoStore>()(
     },
 
     fetchData: async (pair) => {
+      set( {
+        loading: true
+      })
       const result = await convertCurrency(pair);
       set(() => ({
         convertedCurrency: result
       }));
+
+      set( {
+        loading: false
+      })
     }
 
   }))
