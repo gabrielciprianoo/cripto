@@ -1,15 +1,14 @@
-:root{
+:root {
   --white: #ffffff;
   --black: #182339;
   --primary: #61ECBC;
 }
 
-html{
+html {
   font-size: 62.5%;
 }
 
-
-body{
+body {
   background-image: url('/bg.jpg');
   background-position: center;
   background-repeat: no-repeat;
@@ -18,107 +17,172 @@ body{
   font-family: "Outfit", sans-serif;
 }
 
-.container{
+.container {
   max-width: 60rem;
   width: 90%;
   margin: 0 auto;
   padding: 0 1rem;
 }
 
-.app-title{
+.app-title {
   color: var(--white);
   font-size: 3.8rem;
   margin-top: 5rem;
-  line-height: 1;
+  line-height: 1.2;
 }
 
-.app-title span{
+.app-title span {
   display: block;
   color: var(--primary);
   font-size: 4.4rem;
 }
 
-.content{
+.content {
   margin-top: 5rem;
   padding: 6rem 2rem;
   background-color: var(--white);
   border-radius: 1rem;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  box-shadow: rgba(50, 50, 93, 0.15) 0px 30px 60px -20px,
+              rgba(0, 0, 0, 0.2) 0px 20px 40px -20px;
 }
 
+/* --- Formulario --- */
 
 .crypto-form-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   background-color: #f4f7fa;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: auto;
-  
-  
+  padding: 3rem;
+  border-radius: 1rem;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
 }
 
 h2 {
-  font-size: 2.5rem;
-  color: #333;
-  margin-bottom: 20px;
+  font-size: 2.8rem;
+  color: #1e293b;
+  margin-bottom: 2.5rem;
 }
 
 .crypto-search-form {
   display: flex;
   flex-direction: column;
   width: 100%;
-  margin-bottom: 15px;
+  gap: 1.5rem;
 }
 
 .select-container {
-  margin-bottom: 15px;
   width: 100%;
 }
 
 .select-label {
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+  color: #334155;
 }
 
 .crypto-select {
   width: 100%;
-  padding: 10px;
-  border-radius: 5px;
-  border: 2px solid #ddd;
-  font-size: 1.5rem;
-  outline: none;
+  padding: 1.2rem;
+  font-size: 1.6rem;
+  border-radius: 0.6rem;
+  border: 2px solid #cbd5e1;
   transition: border-color 0.3s ease;
+  background-color: #fff;
 }
 
 .crypto-select:focus {
   border-color: #007bff;
-}
-
-.crypto-select:hover{
-  cursor: pointer;
+  outline: none;
 }
 
 .crypto-submit {
-  background-color: #007bff;
+  background-color: #2563eb;
   color: white;
+  padding: 1.2rem;
   border: none;
-  padding: 10px 15px;
-  margin-left: 10px;
-  border-radius: 5px;
+  border-radius: 0.6rem;
+  font-size: 1.6rem;
+  font-weight: 600;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 .crypto-submit:hover {
-  background-color: #0056b3;
+  background-color: #1d4ed8;
 }
 
 .error-message {
   color: red;
-  font-size: 2rem;
-  margin-top: 10px;
+  font-size: 1.6rem;
+  margin-top: 1rem;
+}
+
+/* --- Resultado --- */
+
+.crypto-card {
+  background-color: var(--white);
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.08);
+  padding: 2rem;
+  margin: 3rem auto 0 auto;
+  font-family: 'Segoe UI', sans-serif;
+  max-width: 50rem;
+}
+
+.crypto-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.crypto-icon {
+  width: 3rem;
+  height: 3rem;
+}
+
+.crypto-update {
+  font-size: 1.2rem;
+  color: #64748b;
+}
+
+.crypto-price {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 1rem 0;
+}
+
+.crypto-change {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.crypto-change.positive {
+  color: #16a34a;
+}
+
+.crypto-change.negative {
+  color: #dc2626;
+}
+
+.crypto-range {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.4rem;
+  color: #475569;
+  gap: 1rem;
+}
+
+.crypto-range span {
+  display: block;
+  font-size: 1.2rem;
+  color: #64748b;
+}
+
+.crypto-range strong {
+  font-size: 1.6rem;
 }
