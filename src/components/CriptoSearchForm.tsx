@@ -4,9 +4,10 @@ import { currencies } from '../data';
 import { useCriptostore } from '../store';
 import type { Pair } from '../types';
 
+
 export default function CriptoSearchForm() {
 
-  const { CryptoCurrencies } = useCriptostore();
+  const { CryptoCurrencies, fetchData } = useCriptostore();
   const [pair, setPair] = useState<Pair>({
     currency: '',
     cryptoCurrency: ''
@@ -32,7 +33,8 @@ export default function CriptoSearchForm() {
         return;
       }
 
-
+      fetchData(pair);
+      
   }
 
   
